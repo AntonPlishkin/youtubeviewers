@@ -74,7 +74,7 @@ function youtubeviews() {
         if (reuseResponse.getSelectedButton() === SpreadsheetApp.getUi().Button.YES) {
             // 2a. Если "Да", запросите диапазон для вывода
             insertSheetName = readSheetName;
-            insertRange = Browser.inputBox('Введите диапазон вставки (например, G9:G28). Количество ячеек для считывания: ' + readCellsCount);
+            insertRange = Browser.inputBox('Введите диапазон вставки (например, G9:G28). Необходимое количество ячеек для вывода: ' + readCellsCount);
         } else {
             // 3. Выбор листа и диапазона для вывода
             var insertResponse = SpreadsheetApp.getUi().prompt(
@@ -89,7 +89,7 @@ function youtubeviews() {
 
             insertSheetName = insertResponse.getResponseText();
             // Включаем количество ячеек в текст вопроса о диапазоне для вывода
-            insertRange = Browser.inputBox('Введите диапазон вставки (например, G9:G28). Количество ячеек для считывания: ' + readCellsCount);
+            insertRange = Browser.inputBox('Введите диапазон вставки (например, G9:G28). Необходимое количество ячеек для вывода: ' + readCellsCount);
         }
 
         if (readSheetName && readRange && insertSheetName && insertRange) {
